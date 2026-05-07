@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jepang Tanpa Hutang 2026 — Blueprint Realistis SSW Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0392B;
+    --dkred: #7B0D0D;
+    --gold: #D4AC0D;
+    --ltgold: #F5E27A;
+    --dark: #0F0F0F;
+    --charcoal: #1C1C1C;
+    --offwhite: #FAF8F3;
+    --cream: #FEF9E7;
+    --gray: #5D6D7E;
+    --lgray: #E8E4DC;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--offwhite);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── SCROLLBAR ─────────────────────────────── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+  /* ── NOISE TEXTURE OVERLAY ─────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ──────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding: 60px 24px 80px;
+  }
+
+  /* Torii gate decorative background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(192,57,43,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(212,172,13,0.08) 0%, transparent 60%);
+  }
+
+  .hero-torii {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(500px, 100%);
+    height: 55%;
+    opacity: 0.06;
+  }
+
+  .hero-jp-text {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(80px, 15vw, 160px);
+    font-weight: 900;
+    color: var(--red);
+    opacity: 0.08;
+    writing-mode: vertical-rl;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,172,13,0.15);
+    border: 1px solid rgba(212,172,13,0.4);
+    color: var(--ltgold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 9vw, 88px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 8px;
+    animation: fadeUp 0.8s 0.2s ease both;
+    text-shadow: 0 0 80px rgba(192,57,43,0.4);
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-title-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+
+  .hero-divider::before,
+  .hero-divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+
+  .hero-divider::after {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .hero-divider span {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .hero-desc {
+    font-size: clamp(15px, 2.5vw, 17px);
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0 auto 40px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    align-self: center;
+  }
+
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--red) 0%, #E74C3C 50%, var(--dkred) 100%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.4), 0 0 0 1px rgba(255,255,255,0.1) inset;
+    animation: fadeUp 0.8s 0.6s ease both;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.4s;
+  }
+
+  .cta-primary:hover::before { left: 100%; }
+  .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(192,57,43,0.5); }
+  .cta-primary:active { transform: translateY(0); }
+
+  .cta-arrow {
+    font-size: 20px;
+    transition: transform 0.2s;
+  }
+
+  .cta-primary:hover .cta-arrow { transform: translateX(4px); }
+
+  .hero-guarantee {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    animation: fadeUp 0.8s 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── PROBLEM SECTION ───────────────────────── */
+  .section { padding: 80px 24px; }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+
+  .problem {
+    background: var(--charcoal);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,57,43,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding: 4px 12px;
+    border: 1px solid rgba(212,172,13,0.3);
+    border-radius: 100px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .section-lead {
+    font-size: 17px;
+    line-height: 1.75;
+    opacity: 0.75;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .problem-card {
+    background: rgba(255,255,255,0.03);
+    padding: 28px 24px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .problem-card:hover { background: rgba(255,255,255,0.06); }
+
+  .problem-card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .problem-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .problem-card p {
+    font-size: 13px;
+    opacity: 0.6;
+    line-height: 1.6;
+  }
+
+  .problem-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 24px; right: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192,57,43,0.4), transparent);
+  }
+
+  /* ── STORY SECTION ─────────────────────────── */
+  .story {
+    background: var(--offwhite);
+    position: relative;
+  }
+
+  .story-quote {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 28px 32px;
+    border-radius: 0 8px 8px 0;
+    margin: 32px 0;
+    position: relative;
+  }
+
+  .story-quote::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  .story-quote p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--charcoal);
+    font-style: italic;
+  }
+
+  .story-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--gray);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SOLUTION / BOOK ───────────────────────── */
+  .book-section {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dkred) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-section::before {
+    content: '日本';
+    position: absolute;
+    right: -40px; bottom: -40px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .book-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 640px) {
+    .book-layout { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* Book mockup */
+  .book-mockup {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-cover {
+    width: min(260px, 100%);
+    background: linear-gradient(145deg, var(--red) 0%, var(--dkred) 100%);
+    border-radius: 4px 12px 12px 4px;
+    padding: 32px 24px 28px;
+    position: relative;
+    box-shadow:
+      -6px 6px 0 rgba(0,0,0,0.3),
+      -10px 10px 0 rgba(0,0,0,0.15),
+      0 30px 60px rgba(0,0,0,0.5);
+    transform: perspective(800px) rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.4s ease;
+  }
+
+  .book-cover:hover {
+    transform: perspective(800px) rotateY(0deg) rotateX(0deg);
+  }
+
+  .book-cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .book-cover-badge {
+    background: var(--gold);
+    color: var(--dkred);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  .book-cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .book-cover-title span { color: var(--ltgold); }
+
+  .book-cover-sub {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+    margin-bottom: 32px;
+  }
+
+  .book-cover-torii {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .book-cover-torii svg {
+    opacity: 0.35;
+    width: 90px;
+  }
+
+  .book-cover-footer {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .book-spine {
+    position: absolute;
+    left: -16px; top: 0; bottom: 0;
+    width: 18px;
+    background: linear-gradient(180deg, var(--dkred) 0%, #5C0000 100%);
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 0 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-spine span {
+    writing-mode: vertical-rl;
+    font-family: 'Playfair Display', serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  /* Book info */
+  .book-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .book-info h2 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .book-info p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 24px;
+  }
+
+  .book-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .book-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .book-features li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── CHAPTERS ──────────────────────────────── */
+  .chapters { background: var(--offwhite); }
+
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .chapter-card {
+    background: #fff;
+    border: 1px solid var(--lgray);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .chapter-card:hover {
+    border-color: var(--red);
+    box-shadow: 0 4px 20px rgba(192,57,43,0.1);
+    transform: translateY(-2px);
+  }
+
+  .chapter-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .chapter-card:hover::before { transform: scaleX(1); }
+
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--lgray);
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .chapter-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+
+  .chapter-tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10px;
+    color: var(--gray);
+    background: var(--lgray);
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+
+  /* ── BONUS ─────────────────────────────────── */
+  .bonus {
+    background: var(--charcoal);
+    color: #fff;
+  }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .bonus-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bonus-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212,172,13,0.05) 0%, transparent 60%);
+  }
+
+  .bonus-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(212,172,13,0.3);
+  }
+
+  .bonus-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .bonus-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .bonus-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .bonus-value {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 600;
+    border: 1px solid rgba(212,172,13,0.3);
+    padding: 2px 10px;
+    border-radius: 100px;
+  }
+
+  /* ── FOR WHO ───────────────────────────────── */
+  .forwho { background: #fff; }
+
+  .forwho-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 560px) { .forwho-grid { grid-template-columns: 1fr; } }
+
+  .forwho-col h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .forwho-yes h3 { color: #1a7f37; }
+  .forwho-no h3 { color: var(--gray); }
+
+  .forwho-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .forwho-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+
+  .forwho-yes .forwho-list li::before {
+    content: '✓';
+    color: #1a7f37;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .forwho-no .forwho-list li::before {
+    content: '✗';
+    color: var(--lgray);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+    text-decoration: line-through;
+  }
+
+  .forwho-no .forwho-list li { color: var(--gray); }
+
+  /* ── COMPARISON TABLE ──────────────────────── */
+  .compare { background: var(--offwhite); }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .compare-table th {
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .compare-table th:first-child {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    text-align: left;
+  }
+
+  .compare-table th:nth-child(2) {
+    background: var(--lgray);
+    color: var(--gray);
+  }
+
+  .compare-table th:nth-child(3) {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .compare-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--lgray);
+    background: #fff;
+  }
+
+  .compare-table td:first-child {
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .compare-table td:nth-child(2) {
+    color: var(--gray);
+    text-align: center;
+  }
+
+  .compare-table td:nth-child(3) {
+    text-align: center;
+    font-weight: 600;
+    color: var(--red);
+    background: rgba(192,57,43,0.03);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: rgba(192,57,43,0.02); }
+
+  /* ── PRICING ───────────────────────────────── */
+  .pricing {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(192,57,43,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .price-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
+
+  .price-badge {
+    display: inline-block;
+    background: rgba(212,172,13,0.15);
+    border: 1px solid rgba(212,172,13,0.3);
+    color: var(--ltgold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .price-original {
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 80px);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+  }
+
+  .price-includes {
+    text-align: left;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .price-includes li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .price-includes li span:first-child {
+    color: var(--gold);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .price-cta {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--red), #E74C3C, var(--dkred));
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(192,57,43,0.4);
+    letter-spacing: 0.02em;
+  }
+
+  .price-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(192,57,43,0.5);
+  }
+
+  .price-cta:active { transform: translateY(0); }
+
+  .price-sub {
+    margin-top: 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .price-urgency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .price-urgency::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #2ECC71;
+    box-shadow: 0 0 6px #2ECC71;
+    flex-shrink: 0;
+  }
+
+  /* ── FAQ ───────────────────────────────────── */
+  .faq { background: var(--offwhite); }
+
+  .faq-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--lgray);
+  }
+
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 16px;
+    transition: background 0.15s;
+    list-style: none;
+  }
+
+  .faq-q:hover { background: rgba(192,57,43,0.03); }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--red);
+    flex-shrink: 0;
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+
+  details[open] .faq-q::after { transform: rotate(45deg); }
+
+  .faq-a {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--gray);
+    border-top: 1px solid var(--lgray);
+    padding-top: 16px;
+  }
+
+  /* ── FINAL CTA ─────────────────────────────── */
+  .final-cta {
+    background: linear-gradient(135deg, var(--dkred) 0%, var(--dark) 60%);
+    color: #fff;
+    text-align: center;
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 50% 120%, rgba(212,172,13,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 40% at 50% -20%, rgba(192,57,43,0.3) 0%, transparent 60%);
+  }
+
+  .final-cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+
+  .final-jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.08);
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .final-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .final-cta h2 em { color: var(--gold); font-style: italic; }
+
+  .final-cta p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+  }
+
+  /* ── FOOTER ────────────────────────────────── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--red); }
+
+  /* ── FLOATING BUY ──────────────────────────── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .sticky-cta.visible { transform: translateY(0); }
+
+  .sticky-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .sticky-price strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--gold);
+  }
+
+  .sticky-price del {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .sticky-btn {
+    flex-shrink: 0;
+    background: var(--red);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .sticky-btn:hover { background: #E74C3C; }
+
+  .sticky-label {
+    flex: 1;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    min-width: 0;
+  }
+
+  .sticky-label strong { color: #fff; display: block; }
+
+  /* ── SCROLL REVEAL ─────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── UTILS ─────────────────────────────────── */
+  .text-gold { color: var(--gold); }
+  .text-red { color: var(--red); }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+
+  @media (max-width: 480px) {
+    .hero-stats { gap: 20px; }
+    .hero-stat-divider { display: none; }
+    .price-card { padding: 32px 24px; }
+    .sticky-cta { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HERO                                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-jp-text">日本</div>
+
+  <!-- Torii SVG background -->
+  <svg class="hero-torii" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="140" y="60" width="20" height="240" fill="#C0392B"/>
+    <rect x="240" y="60" width="20" height="240" fill="#C0392B"/>
+    <rect x="100" y="60" width="200" height="20" fill="#C0392B"/>
+    <rect x="110" y="40" width="180" height="16" fill="#922B21"/>
+    <rect x="80" y="56" width="240" height="12" fill="#C0392B"/>
+    <rect x="158" y="140" width="84" height="10" fill="#922B21"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">E-Book Digital 2026 · Edisi Terbaru</div>
+    <p class="hero-eyebrow">Blueprint Realistis untuk Calon Pekerja SSW Indonesia</p>
+    <h1 class="hero-title">Jepang<br><span>Tanpa Hutang</span></h1>
+    <p class="hero-title-sub">2026 Edition</p>
+
+    <div class="hero-divider">
+      <span>panduan lengkap 20 bab</span>
+    </div>
+
+    <p class="hero-desc">
+      Panduan jujur dari nol sampai berangkat — tanpa bayar puluhan juta di depan,
+      tanpa tertipu agen abal-abal, tanpa hutang yang mencekik selama bertahun-tahun.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">20</span>
+        <span class="hero-stat-label">Bab Lengkap</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">57</span>
+        <span class="hero-stat-label">Halaman</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">4</span>
+        <span class="hero-stat-label">Bonus Toolkit</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">B5</span>
+        <span class="hero-stat-label">Format PDF</span>
+      </div>
+    </div>
+
+    <a href="#pricing" class="cta-primary">
+      Saya Mau Buku Ini <span class="cta-arrow">→</span>
+    </a>
+    <p class="hero-guarantee">PDF langsung terunduh · Bisa dibaca di HP, tablet, laptop</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PROBLEM                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section problem">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Masalah yang Sering Terjadi</span>
+      <h2 class="section-title">Kenapa Banyak yang Gagal<br>ke <em>Jepang?</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.55)">
+        Bukan karena tidak ada peluang. Bukan karena kurang semangat.
+        Tapi karena informasi yang salah, jalur yang keliru, dan strategi yang tidak pernah diajarkan.
+      </p>
+    </div>
+
+    <div class="problem-cards reveal">
+      <div class="problem-card">
+        <span class="problem-card-icon">💸</span>
+        <h3>Tertipu Agen & Bayar Puluhan Juta</h3>
+        <p>Rp 30–60 juta dibayar di depan tapi tidak pernah berangkat. Uang masuk ke kantong yang salah.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-card-icon">📋</span>
+        <h3>Informasi Sudah Kadaluarsa</h3>
+        <p>Sistem Ginou Jisshu sudah dihapus 2024, tapi banyak yang masih ikut program lama yang tidak aktif.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-card-icon">😰</span>
+        <h3>Tidak Tahu Harus Mulai dari Mana</h3>
+        <p>Terlalu banyak informasi bertentangan di internet. Tidak ada panduan yang jelas dan bisa dipercaya.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-card-icon">⛓️</span>
+        <h3>Terjebak Skema Potong Gaji</h3>
+        <p>Sampai di Jepang tapi 50–70% gaji dipotong cicilan agen selama 2–3 tahun. Kerja keras, hasil nol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STORY                                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section story">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Kisah Nyata</span>
+      <h2 class="section-title">Ini Bukan <em>Cerita Fiksi</em></h2>
+    </div>
+
+    <div class="story-quote reveal">
+      <p>
+        "Dimas sudah mimpi ke Jepang sejak SMA. Suatu malam, dia ketemu postingan:
+        <strong>"Berangkat ke Jepang! Gaji 15 juta/bulan!"</strong>
+        Dia pinjam ke saudara. Dia jual motornya. Membayar Rp 35 juta sebagai biaya 'administrasi.'
+        Tiga bulan berlalu. Enam bulan. Sembilan bulan. Tidak ada kabar keberangkatan.
+        Dimas tidak pernah sampai ke Jepang."
+      </p>
+      <cite>— Kisah nyata yang berulang ratusan kali setiap tahun di Indonesia</cite>
+    </div>
+
+    <div class="reveal" style="margin-top:32px;">
+      <p style="font-size:17px; line-height:1.8; color:var(--charcoal);">
+        Tapi ini bukan tentang Dimas yang bodoh. Ini tentang sistem yang tidak transparan
+        dan informasi yang tidak pernah diajarkan. Buku ini hadir untuk mengisi kekosongan itu —
+        dengan panduan yang <strong>jujur, konkret, dan bisa langsung dieksekusi.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BOOK / SOLUTION                             -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section book-section">
+  <div class="section-inner">
+    <div class="book-layout">
+
+      <!-- Book Mockup -->
+      <div class="book-mockup reveal">
+        <div class="book-cover">
+          <div class="book-spine"><span>JEPANG TANPA HUTANG 2026</span></div>
+          <div class="book-cover-top">
+            <div>
+              <div style="font-family:'Noto Serif JP',serif;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.2em;margin-bottom:2px;">E-BOOK</div>
+            </div>
+            <div class="book-cover-badge">2026</div>
+          </div>
+          <div class="book-cover-title">Jepang<br><span>Tanpa</span><br>Hutang</div>
+          <div class="book-cover-sub">Blueprint Realistis Berangkat<br>Tanpa Bayar Puluhan Juta di Depan</div>
+          <div class="book-cover-torii">
+            <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="42" y="18" width="7" height="72" fill="#fff"/>
+              <rect x="71" y="18" width="7" height="72" fill="#fff"/>
+              <rect x="30" y="18" width="60" height="7" fill="#fff"/>
+              <rect x="32" y="12" width="56" height="5" fill="rgba(255,255,255,0.6)"/>
+              <rect x="24" y="17" width="72" height="4" fill="#fff"/>
+              <rect x="47" y="42" width="26" height="3" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+          </div>
+          <div class="book-cover-footer">20 BAB · BONUS TOOLKIT · FORMAT B5</div>
+        </div>
+      </div>
+
+      <!-- Book Info -->
+      <div class="book-info reveal">
+        <h2>Solusi <em>Nyata</em> untuk<br>Calon Pekerja SSW Indonesia</h2>
+        <p>
+          Buku ini bukan janji kosong tentang "mudah ke Jepang." Ini panduan jujur yang
+          membahas realita, strategi yang terbukti, dan langkah konkret yang bisa langsung kamu jalankan —
+          mulai dari hari ini, dari kondisi apapun yang kamu miliki.
+        </p>
+        <ul class="book-features">
+          <li>3 jalur nyata berangkat tanpa bayar puluhan juta di depan</li>
+          <li>Cara menghindari penipuan dengan 5 langkah verifikasi</li>
+          <li>Roadmap 90 hari dari nol sampai lamaran terkirim</li>
+          <li>Cara belajar bahasa Jepang gratis sampai N4</li>
+          <li>AI prompt siap pakai untuk simulasi interview</li>
+          <li>Kalkulasi gaji, biaya hidup, dan target tabungan yang realistis</li>
+          <li>Strategi pulang dengan modal Rp 200–400 juta</li>
+          <li>Panduan ibadah & halal food untuk Muslim di Jepang</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTERS                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section chapters">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Isi Buku</span>
+      <h2 class="section-title">20 Bab yang Akan<br><em>Mengubah Arahmu</em></h2>
+      <p class="section-lead">
+        Dari memahami sistem SSW terbaru hingga strategi pulang dengan modal besar —
+        semua dikemas dalam bahasa yang mudah dipahami, tidak teoritis, langsung bisa diterapkan.
+      </p>
+    </div>
+
+    <div class="chapters-grid reveal">
+      <div class="chapter-card">
+        <span class="chapter-num">01</span>
+        <div class="chapter-title">Kenapa Banyak Orang Gagal ke Jepang?</div>
+        <span class="chapter-tag">Mindset</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">02</span>
+        <div class="chapter-title">Sistem Lama vs Sistem Baru Jepang</div>
+        <span class="chapter-tag">SSW 2026</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">03</span>
+        <div class="chapter-title">Kenapa 2026 adalah Momentum</div>
+        <span class="chapter-tag">Peluang</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">04</span>
+        <div class="chapter-title">Apa Arti "Tanpa Hutang" — Jujur & Realistis</div>
+        <span class="chapter-tag">Finansial</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">05</span>
+        <div class="chapter-title">3 Jalur Nyata ke Jepang Tanpa Bayar di Depan</div>
+        <span class="chapter-tag">Strategi Utama</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">06</span>
+        <div class="chapter-title">Cara Menghindari Penipuan & Skema Abal-Abal</div>
+        <span class="chapter-tag">Perlindungan</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">07</span>
+        <div class="chapter-title">Kalau Kamu Benar-Benar Tidak Punya Uang</div>
+        <span class="chapter-tag">Dari Nol</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">08</span>
+        <div class="chapter-title">Belajar Bahasa Jepang Tanpa Kursus Mahal</div>
+        <span class="chapter-tag">Bahasa</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">09</span>
+        <div class="chapter-title">AI Hack untuk Belajar & Latihan Interview</div>
+        <span class="chapter-tag">Modern 2026</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">10</span>
+        <div class="chapter-title">Roadmap 90 Hari — Dari Nol Sampai Apply</div>
+        <span class="chapter-tag">Action Plan</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">11</span>
+        <div class="chapter-title">Membuat CV Jepang (Rirekisho)</div>
+        <span class="chapter-tag">Dokumen</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">12</span>
+        <div class="chapter-title">Cara Melamar Langsung Tanpa Agen</div>
+        <span class="chapter-tag">Eksekusi</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">13</span>
+        <div class="chapter-title">Teknik Interview Orang Jepang</div>
+        <span class="chapter-tag">Interview</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">14</span>
+        <div class="chapter-title">Gaji vs Biaya Hidup Jepang</div>
+        <span class="chapter-tag">Reality Check</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">15</span>
+        <div class="chapter-title">Realita Kerja di Jepang</div>
+        <span class="chapter-tag">Jujur</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">16</span>
+        <div class="chapter-title">Kenapa Banyak Orang Gagal (Setelah Sampai)</div>
+        <span class="chapter-tag">Warning</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">17</span>
+        <div class="chapter-title">Cara Bertahan di Jepang</div>
+        <span class="chapter-tag">Mental</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">18</span>
+        <div class="chapter-title">Ibadah & Kehidupan Muslim di Jepang</div>
+        <span class="chapter-tag">Muslim</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">19</span>
+        <div class="chapter-title">Cara Naik Gaji Lebih Cepat</div>
+        <span class="chapter-tag">Karir</span>
+      </div>
+      <div class="chapter-card">
+        <span class="chapter-num">20</span>
+        <div class="chapter-title">Cara Nabung & Pulang dengan Modal Besar</div>
+        <span class="chapter-tag">Endgame</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BONUS                                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section bonus">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Bonus Eksklusif</span>
+      <h2 class="section-title" style="color:#fff;">4 Toolkit yang Langsung<br><em>Bisa Dipakai</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.55);">
+        Bukan sekadar teori. Setiap bonus bisa langsung kamu gunakan hari ini,
+        tanpa perlu alat tambahan apapun.
+      </p>
+    </div>
+
+    <div class="bonus-grid reveal">
+      <div class="bonus-card">
+        <span class="bonus-icon">📋</span>
+        <div class="bonus-title">Checklist Dokumen Lengkap</div>
+        <div class="bonus-desc">Daftar lengkap semua dokumen yang dibutuhkan — sebelum berangkat dan saat di Jepang</div>
+        <span class="bonus-value">Langsung print</span>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-icon">📚</span>
+        <div class="bonus-title">50 Kosakata Kerja Wajib</div>
+        <div class="bonus-desc">Kosakata romaji + arti bahasa Indonesia paling penting di tempat kerja Jepang, per sektor</div>
+        <span class="bonus-value">Per sektor</span>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-icon">🤖</span>
+        <div class="bonus-title">5 Prompt AI Interview Siap Pakai</div>
+        <div class="bonus-desc">Copy-paste ke ChatGPT atau Claude, langsung bisa simulasi interview dalam bahasa Jepang malam ini</div>
+        <span class="bonus-value">Langsung pakai</span>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-icon">🗺️</span>
+        <div class="bonus-title">Roadmap Printable</div>
+        <div class="bonus-desc">Visual roadmap dari persiapan awal hingga pulang dengan modal besar — bisa ditempel di dinding</div>
+        <span class="bonus-value">Printable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FOR WHO                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section forwho">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Untuk Siapa</span>
+      <h2 class="section-title">Buku Ini <em>Untuk Kamu</em><br>Kalau...</h2>
+    </div>
+
+    <div class="forwho-grid reveal">
+      <div class="forwho-col forwho-yes">
+        <h3>✓ &nbsp;Ini untuk kamu</h3>
+        <ul class="forwho-list">
+          <li>Kamu bermimpi kerja di Jepang tapi bingung harus mulai dari mana</li>
+          <li>Kamu pernah dengar ada yang tertipu agen dan tidak mau mengalami hal yang sama</li>
+          <li>Kamu tidak punya tabungan besar tapi tetap ingin berangkat</li>
+          <li>Kamu sudah coba belajar bahasa Jepang tapi tidak tahu metode yang benar</li>
+          <li>Kamu Muslim dan khawatir soal halal food dan ibadah di Jepang</li>
+          <li>Kamu sudah di Jepang tapi masih bingung cara maksimalkan karir dan tabungan</li>
+        </ul>
+      </div>
+      <div class="forwho-col forwho-no">
+        <h3 style="color:var(--gray);">✗ &nbsp;Ini bukan untuk kamu kalau</h3>
+        <ul class="forwho-list">
+          <li>Kamu mencari cara cepat kaya tanpa usaha apapun</li>
+          <li>Kamu sudah punya panduan lengkap dan jalur yang jelas</li>
+          <li>Kamu tidak bersedia belajar dan mempersiapkan diri minimal 90 hari</li>
+          <li>Kamu mencari jaminan keberhasilan 100% tanpa kerja keras</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- COMPARE                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section compare">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Perbandingan</span>
+      <h2 class="section-title">Tanpa Panduan vs<br><em>Dengan Panduan Ini</em></h2>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto; margin-top:40px; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+      <table class="compare-table" style="min-width:500px;">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Aspek</th>
+            <th>Tanpa Panduan Ini</th>
+            <th>Dengan Buku Ini</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biaya persiapan</td>
+            <td>Rp 30–60 juta+ (bayar agen)</td>
+            <td style="color:var(--red)">Rp 5–17 juta saja</td>
+          </tr>
+          <tr>
+            <td>Risiko penipuan</td>
+            <td>Sangat tinggi</td>
+            <td style="color:var(--red)">Minimal (tahu cara verifikasi)</td>
+          </tr>
+          <tr>
+            <td>Kebebasan pindah kerja</td>
+            <td>Tidak ada (sistem lama)</td>
+            <td style="color:var(--red)">Bebas via SSW</td>
+          </tr>
+          <tr>
+            <td>Belajar bahasa Jepang</td>
+            <td>Kursus Rp 2–5 juta/bulan</td>
+            <td style="color:var(--red)">Gratis dengan metode yang benar</td>
+          </tr>
+          <tr>
+            <td>Target tabungan 3 tahun</td>
+            <td>Tidak tahu, tidak terencana</td>
+            <td style="color:var(--red)">Rp 200–400 juta (dengan strategi)</td>
+          </tr>
+          <tr>
+            <td>Persiapan interview</td>
+            <td>Tebak-tebakan</td>
+            <td style="color:var(--red)">Simulasi AI + 8 pertanyaan wajib</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PRICING                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section pricing" id="pricing">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <span class="label">Harga</span>
+      <h2 class="section-title" style="color:#fff;">Investasi Sekali,<br><em>Manfaat Seumur Karir</em></h2>
+      <p style="color:rgba(255,255,255,0.5); font-size:15px; margin-top:8px;">
+        Bandingkan dengan biaya agen yang bisa mencapai Rp 30–60 juta.
+      </p>
+    </div>
+
+    <div class="price-card reveal">
+      <div class="price-badge">Akses Seumur Hidup · PDF Langsung Terunduh</div>
+      <div class="price-original">Rp 99.000</div>
+      <div class="price-main">Rp 49.000</div>
+      <div class="price-note">Harga perkenalan — berlaku terbatas</div>
+
+      <ul class="price-includes">
+        <li>
+          <span>✦</span>
+          <span>E-Book PDF 57 halaman format B5 — baca di HP, tablet, laptop</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>20 bab panduan lengkap dari persiapan hingga pulang dengan modal besar</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>Bonus: Checklist Dokumen Lengkap siap print</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>Bonus: 50 Kosakata Kerja Wajib per sektor</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>Bonus: 5 Prompt AI Interview siap pakai malam ini</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>Bonus: Roadmap Printable dari persiapan hingga pulang</span>
+        </li>
+        <li>
+          <span>✦</span>
+          <span>Update gratis jika ada revisi konten di masa mendatang</span>
+        </li>
+      </ul>
+
+      <a href="#" class="price-cta">
+        Beli Sekarang — Rp 49.000 →
+      </a>
+      <p class="price-sub">PDF langsung tersedia setelah pembayaran · Aman & terpercaya</p>
+      <p class="price-urgency">Pembelian aman · Pembayaran diproses oleh Lynk.id</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FAQ                                         -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section faq">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="label">Pertanyaan Umum</span>
+      <h2 class="section-title">Yang Sering<br><em>Ditanyakan</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary class="faq-q">Apakah buku ini menjamin saya bisa berangkat ke Jepang?</summary>
+        <div class="faq-a">
+          Tidak ada yang bisa menjamin keberhasilan 100% — dan kami tidak akan membohongimu dengan klaim seperti itu. Yang kami jamin adalah: semua informasi di buku ini akurat, jujur, dan actionable berdasarkan kondisi 2026. Hasilnya bergantung pada seberapa serius kamu menjalankan langkah-langkahnya.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Apakah buku ini cocok untuk yang belum punya pengalaman kerja?</summary>
+        <div class="faq-a">
+          Ya, sangat cocok! Buku ini justru dirancang untuk pemula yang mulai dari nol — termasuk yang belum pernah belajar bahasa Jepang sama sekali, yang tabungannya masih minim, dan yang belum pernah berurusan dengan proses kerja ke luar negeri.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Apakah informasinya masih relevan di 2026?</summary>
+        <div class="faq-a">
+          Ya! Buku ini ditulis khusus untuk kondisi 2026, termasuk perubahan sistem dari Ginou Jisshu ke SSW, perkembangan terbaru program BP2MI, dan penggunaan AI sebagai alat belajar bahasa Jepang. Ini bukan konten daur ulang dari 2020.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Saya Muslim — apakah buku ini membahas soal halal food dan ibadah?</summary>
+        <div class="faq-a">
+          Ya! Bab 18 secara khusus membahas kehidupan Muslim di Jepang: cara menemukan makanan halal, daftar masjid utama per kota, strategi Ramadan sambil bekerja, cara minta cuti Hari Raya, dan panduan komunitas Muslim Indonesia di Jepang.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Bagaimana cara mendapatkan file PDF-nya setelah membeli?</summary>
+        <div class="faq-a">
+          Setelah pembayaran berhasil melalui Lynk.id, kamu akan langsung mendapatkan link unduhan file PDF. File bisa disimpan selamanya di perangkatmu — tidak ada batas waktu akses.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Di perangkat apa saja bisa dibaca?</summary>
+        <div class="faq-a">
+          PDF format B5 bisa dibaca di semua perangkat: HP Android, iPhone, tablet, laptop Windows, MacBook, dan bisa dicetak jika diinginkan. Gunakan aplikasi PDF reader apapun — Adobe Acrobat, Google Drive, atau bawaan perangkatmu.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Apakah ada refund jika tidak puas?</summary>
+        <div class="faq-a">
+          Karena ini produk digital yang langsung bisa diunduh, kami tidak menyediakan refund setelah file diterima. Kami sangat menyarankan kamu membaca deskripsi lengkap sebelum membeli untuk memastikan buku ini sesuai kebutuhanmu.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FINAL CTA                                   -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <span class="final-jp">がんばれ</span>
+    <h2>Jepang Menunggumu.<br>Mulai dari <em>Malam Ini.</em></h2>
+    <p>
+      Bukan besok. Bukan setelah kondisi lebih siap. Bukan setelah tabungan lebih banyak.
+      Satu langkah kecil hari ini lebih bernilai dari seribu rencana yang tidak pernah dimulai.
+    </p>
+    <a href="#pricing" class="cta-primary" style="font-size:17px; padding:20px 48px;">
+      Dapatkan Buku Ini Sekarang <span class="cta-arrow">→</span>
+    </a>
+    <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.3);">
+      PDF langsung terunduh · Rp 49.000 · Akses seumur hidup
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FOOTER                                      -->
+<!-- ═══════════════════════════════════════════ -->
+<footer>
+  <p>
+    <strong style="color:rgba(255,255,255,0.5);">Jepang Tanpa Hutang (2026)</strong> ·
+    E-Book Digital · Hak cipta dilindungi ·
+    Dibuat dengan <span>♥</span> untuk calon pekerja SSW Indonesia
+  </p>
+  <p style="margin-top:8px;">
+    Konten bersifat edukatif. Selalu verifikasi informasi terkini dari BP2MI dan sumber resmi Jepang.
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STICKY CTA                                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-label">
+    <strong>Jepang Tanpa Hutang (2026)</strong>
+    20 Bab + 4 Bonus Toolkit
+  </div>
+  <div class="sticky-price">
+    <del>Rp 99.000</del>
+    <strong>Rp 49.000</strong>
+  </div>
+  <a href="#pricing" class="sticky-btn">Beli Sekarang</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SCRIPTS                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    const pricingTop = document.getElementById('pricing').offsetTop - 200;
+
+    if (window.scrollY > heroBottom && window.scrollY < pricingTop) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Chapter cards stagger on reveal
+  const chapterCards = document.querySelectorAll('.chapter-card');
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const cards = entry.target.querySelectorAll('.chapter-card');
+        cards.forEach((card, i) => {
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, i * 40);
+        });
+        chapterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.chapters-grid').forEach(grid => {
+    grid.querySelectorAll('.chapter-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease, border-color 0.2s, box-shadow 0.2s';
+    });
+    chapterObserver.observe(grid);
+  });
+</script>
+
+</body>
+</html>
